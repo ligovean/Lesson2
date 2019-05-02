@@ -26,8 +26,9 @@ public enum DayOfWeek {
         int remainingHours = 0;
 
         for (DayOfWeek d:DayOfWeek.values()) {
-            if (d.ordinal() < this.ordinal())
-                remainingHours += d.hoursQty;
+            if (d.ordinal() == this.ordinal())
+                break;
+            remainingHours += d.hoursQty;
         }
         return getWeekHours() - remainingHours;
     }
