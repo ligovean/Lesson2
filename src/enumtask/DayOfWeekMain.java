@@ -19,6 +19,6 @@ public class DayOfWeekMain {
 
         if (d.getHoursQty()==0)
             return "Выходной день!";
-        return "Осталось " + Integer.toString(d.getHoursQty()) + " ч. до конца рабочей недели!";
+        return "Осталось " + d.getHoursQty() + " ч. до конца рабочей недели!";
     }
 }
