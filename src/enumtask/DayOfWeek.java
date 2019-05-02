@@ -23,14 +23,14 @@ public enum DayOfWeek {
     }
 
     public int getRemainHours() { //Метод получения количества оставшихся часов до конца рабочей недели
-        int remainingHours = 0;
+        int workedHours = 0;
 
         for (DayOfWeek d:DayOfWeek.values()) {
             if (d.ordinal() == this.ordinal())
                 break;
-            remainingHours += d.hoursQty;
+            workedHours += d.hoursQty;
         }
-        return getWeekHours() - remainingHours;
+        return getWeekHours() - workedHours;
     }
 
     public int getWeekHours(){ //Метод получения количества рабочих часов в неделе, которой принадлежит данный день
