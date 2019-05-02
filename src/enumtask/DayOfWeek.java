@@ -13,7 +13,6 @@ public enum DayOfWeek {
     public int getHoursQty() {
         return hoursQty;
     }
-
     public String getName() {
         return name;
     }
