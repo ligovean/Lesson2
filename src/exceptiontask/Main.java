@@ -18,7 +18,7 @@ public class Main {
         }
     }
 
-    //Метод суммирования эелементов массива
+    //Метод суммирования эелементов массива с задаваемой размерностью
     private static int myArrayEx(String[][] arr, int dimArr) throws MyArrayDataException,MyArraySizeException {
         checkSize(arr,dimArr);
         checkData(arr,dimArr);
@@ -33,7 +33,7 @@ public class Main {
        }
     }
 
-    //Метод проверки размерности массива с задаваемой размерностью
+    //Метод проверки размерности массива
     private static void checkSize(String [][] arr, int dimArr) throws MyArraySizeException{
         if (arr.length != dimArr || arr[0].length != dimArr){
             String exMsg = "Передан массив размерностью " + arr.length + "x" + arr[0].length;
