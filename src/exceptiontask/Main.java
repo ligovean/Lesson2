@@ -33,7 +33,7 @@ public class Main {
        }
     }
 
-    //Метод проверки размерности массива
+    //Метод проверки размерности массива с задаваемой размерностью
     private static void checkSize(String [][] arr, int dimArr) throws MyArraySizeException{
         if (arr.length != dimArr || arr[0].length != dimArr){
             String exMsg = "Передан массив размерностью " + arr.length + "x" + arr[0].length;
