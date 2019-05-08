@@ -7,10 +7,11 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         //String[][] arr1 = {{"1","2","3","4"},{"01","02!","03","04"},{"01","02","03","04"},{"01","02","03","04"}};
-        String[][] arr1 = {{"1","2","3","4","5"},{"01","03","03","04","06"},{"01=","02","03","04","001"},{"1","2","3","4","2"},{"1","2","3","4","07"}};
+        //String[][] arr1 = {{"1","2","3","4","5"},{"01","03","03","04","06"},{"01=","02","03","04","001"},{"1","2","3","4","2"},{"1","2","3","4","07"}};
+        String[][] arr1 = {{"1","2","3","4"},{"01","02","03","04"},{"01","02","03","04"},{"01","02","03","04"}};
 
         try {
-            System.out.println(myArrayEx(arr1,5));
+            System.out.println(myArrayEx(arr1,4));
         } catch (MyArraySizeException e) {
             e.printStackTrace();
         } catch (MyArrayDataException e) {
@@ -35,8 +36,13 @@ public class Main {
 
     //Метод проверки размерности массива
     private static void checkSize(String [][] arr, int dimArr) throws MyArraySizeException{
-        if (arr.length != dimArr || arr[0].length != dimArr){
-            String exMsg = "Передан массив размерностью " + arr.length + "x" + arr[0].length;
+        boolean wrngLng = false;
+        for (int i=0; i<dimArr; i++)
+        {if (arr[i].length != dimArr)
+                wrngLng = true;}
+
+        if (arr.length != dimArr || wrngLng){
+            String exMsg = "Передан массив не корректной размерностью";
             exMsg += ". Массив должен быть размерностью " + dimArr + "x" + dimArr +".";
             throw new MyArraySizeException(exMsg);
         }
